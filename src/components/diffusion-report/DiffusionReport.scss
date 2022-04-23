@@ -1,0 +1,37 @@
+.diffusion-report {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+
+  &__table {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: rgb(170, 170, 170);
+    border-radius: 20px;
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+
+    &:first-child {
+      font-weight: bold;
+    }
+
+    &:nth-child(2n) {
+      background-color: rgb(201, 201, 201);
+    }
+  }
+
+  &__cell {
+    flex: 0 0 50%;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 5px 20px;
+  }
+}

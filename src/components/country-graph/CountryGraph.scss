@@ -1,0 +1,75 @@
+$graph-point-radius: 10px;
+$graph-line-width: 2px;
+
+.country-graph {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__matrix {
+    position: relative;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__row {
+    display: flex;
+    position: relative;
+    padding-bottom: $graph-point-radius;
+  }
+
+  &__legend {
+    width: 200px;
+    margin-left: 50px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 20px;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    position: relative;
+    background-color: black;
+    box-sizing: border-box;
+    width: 2 * $graph-point-radius;
+    height: 2 * $graph-point-radius;
+    border-radius: 50%;
+    margin-right: $graph-point-radius;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &--with-right-neighbor {
+      &::before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: $graph-point-radius;
+        height: 2px;
+        top: calc(50% - $graph-line-width / 2);
+        left: 100%;
+        background-color: black;
+      }
+    }
+
+    &--with-bottom-neighbor {
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 2px;
+        height: $graph-point-radius;
+        top: 100%;
+        left: calc(50% - $graph-line-width / 2);
+        background-color: black;
+      }
+    }
+  }
+}

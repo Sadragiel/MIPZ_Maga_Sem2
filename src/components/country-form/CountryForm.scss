@@ -1,0 +1,54 @@
+.country-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 24px;
+
+  &__error-list {
+    position: relative;
+    margin:0;
+    padding: 0;
+    text-indent: 0;
+    list-style-type: none;
+    color: red;
+  }
+
+  &__footer {
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+    position: relative;
+    padding: 10px;
+  }
+
+  &__add, &__submit {
+    font-size: 24px;
+    line-height: 28px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__add {
+    color: white;
+    background-color: #008CBA;
+    border: 2px solid #00779e;
+
+    &:hover {
+      background-color: #00779e;
+    }
+  }
+
+  &__submit {
+    color: white;
+    background-color: #4CAF50;
+    border: 2px solid #3c8c3e;
+
+    &:hover {
+      background-color: #3c8c3e;
+    }
+  }
+}
