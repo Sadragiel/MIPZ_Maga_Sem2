@@ -16,7 +16,7 @@ export function DiffusionReport() {
         </div>
         {
           Object.keys(diffusionReport).map((countryName) => (
-            <div className='diffusion-report__row'>
+            <div key={countryName} className='diffusion-report__row'>
               <div className='diffusion-report__cell'>{countryName}</div>
               <div className='diffusion-report__cell'>{diffusionReport[countryName]} days</div>
             </div>

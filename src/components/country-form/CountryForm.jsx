@@ -50,6 +50,7 @@ export function CountryForm() {
             inputs.map(({ id }, index) => 
                 <CountryFormItem 
                     id={id} 
+                    key={id}
                     onRemove={index > 1 ? getRemoveInputHandler(id) : null}
                     onUpdate={getUpdateInputHandler(id)} 
                 />
@@ -58,7 +59,10 @@ export function CountryForm() {
         <ul className='country-form__error-list'>
           {
             errorList.map(errorMessage => 
-              <li className='country-form__error-item'>
+              <li
+                key={errorMessage} 
+                className='country-form__error-item'
+              >
                 { errorMessage }
               </li>
             )

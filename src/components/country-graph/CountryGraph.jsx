@@ -25,10 +25,11 @@ export function CountryGraph() {
       <div className='country-graph__matrix'> 
         {
           countryMap.map((row, rowIndex) => (
-            <div className='country-graph__row'>
+            <div key={rowIndex} className='country-graph__row'>
               {
                 row.map((item, itemIndex) => (
                   <div 
+                    key={itemIndex}
                     className={classNames('country-graph__item', {
                       'country-graph__item--hidden': !item,
                       'country-graph__item--with-right-neighbor': row[itemIndex + 1],
@@ -46,7 +47,9 @@ export function CountryGraph() {
       <div className='country-graph__legend'>
         {
           countriesLegend.map(item => (
-            <div className='country-graph__legend-item'>
+            <div
+              key={item.color}
+              className='country-graph__legend-item'>
               <div 
                 className='country-graph__item'
                 style={(item) ? { backgroundColor: item.color } : {}}
